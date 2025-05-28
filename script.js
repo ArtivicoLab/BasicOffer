@@ -95,25 +95,30 @@ function scrollToTop() {
     });
 }
 
-// Mascot Messages based on scroll position
+// Mascot Messages based on scroll position and sections
 function updateMascotMessages() {
     const scrollTop = window.pageYOffset;
-    const windowHeight = window.innerHeight;
-    const documentHeight = document.documentElement.scrollHeight;
-    const scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
+    
+    // Get section positions
+    const heroSection = document.getElementById('hero');
+    const aboutSection = document.getElementById('about');
+    const solutionSection = document.getElementById('solution');
+    const pricingSection = document.getElementById('pricing');
+    const contactSection = document.getElementById('contact');
     
     let message = "Meet Gradi, your web developer! 👋";
     
-    if (scrollPercent > 90) {
-        message = "Ready to launch? Email us! 🚀";
-    } else if (scrollPercent > 70) {
-        message = "See our amazing pricing! 💰";
-    } else if (scrollPercent > 50) {
-        message = "We're better than agencies! ⭐";
-    } else if (scrollPercent > 25) {
-        message = "6+ years of expertise! ✨";
-    } else if (scrollPercent > 10) {
-        message = "Meet Gradi, your developer! 📖";
+    // Check which section is in view
+    if (contactSection && scrollTop >= contactSection.offsetTop - 200) {
+        message = "Ready to launch? Email contact@artivocolab.com! 🚀";
+    } else if (pricingSection && scrollTop >= pricingSection.offsetTop - 200) {
+        message = "Only $1,500 one-time payment! 💰";
+    } else if (solutionSection && scrollTop >= solutionSection.offsetTop - 200) {
+        message = "We solve all your web problems! ⭐";
+    } else if (aboutSection && scrollTop >= aboutSection.offsetTop - 200) {
+        message = "6+ years of web development expertise! ✨";
+    } else if (heroSection && scrollTop < aboutSection.offsetTop - 200) {
+        message = "Meet Gradi, your web developer! 👋";
     }
     
     if (speechText.textContent !== message) {
