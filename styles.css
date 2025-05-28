@@ -924,6 +924,51 @@ html, body {
         width: 100%;
         max-width: 100%;
     }
+    
+    .contact-method {
+        padding: var(--space-4);
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .contact-details h3 {
+        font-size: var(--font-size-lg);
+        margin-bottom: var(--space-2);
+    }
+    
+    .contact-details p {
+        font-size: var(--font-size-sm);
+        word-break: break-word;
+    }
+    
+    .next-steps {
+        padding: var(--space-4);
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .next-steps h3 {
+        font-size: var(--font-size-lg);
+        margin-bottom: var(--space-3);
+    }
+    
+    .step {
+        padding: var(--space-2);
+        margin-bottom: var(--space-2);
+        font-size: var(--font-size-sm);
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .step-icon {
+        font-size: var(--font-size-base);
+        margin-right: var(--space-2);
+    }
 }
 
 /* Navigation */
