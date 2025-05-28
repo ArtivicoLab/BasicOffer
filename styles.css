@@ -1072,6 +1072,94 @@ body {
     }
 }
 
+/* Contact Info Styling */
+.contact-info {
+    display: grid;
+    gap: var(--space-8);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-method {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    padding: var(--space-8);
+    background: linear-gradient(135deg, 
+        hsla(var(--primary-yellow) / 0.1), 
+        hsla(var(--lime-green) / 0.05));
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-lg);
+    text-align: center;
+}
+
+.contact-icon {
+    font-size: var(--font-size-4xl);
+    flex-shrink: 0;
+}
+
+.contact-details h3 {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+    color: hsl(var(--gray-800));
+}
+
+.contact-details p {
+    font-size: var(--font-size-lg);
+    color: hsl(var(--gray-600));
+    margin-bottom: var(--space-6);
+    line-height: 1.6;
+}
+
+.email-cta {
+    margin: 0 auto;
+    font-size: var(--font-size-lg);
+}
+
+.launch-benefits {
+    background: hsl(var(--white));
+    padding: var(--space-8);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.launch-benefits h4 {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin-bottom: var(--space-6);
+    color: hsl(var(--gray-800));
+}
+
+.benefits-list {
+    list-style: none;
+    display: grid;
+    gap: var(--space-4);
+    text-align: left;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.benefits-list li {
+    font-size: var(--font-size-base);
+    color: hsl(var(--gray-700));
+    line-height: 1.5;
+    padding-left: var(--space-2);
+}
+
+@media (min-width: 768px) {
+    .contact-info {
+        grid-template-columns: 1fr;
+        gap: var(--space-10);
+    }
+    
+    .contact-method {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
 /* Pricing Section */
 .pricing {
     padding: var(--space-20) 0;
