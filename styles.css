@@ -227,7 +227,7 @@ html, body {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    z-index: 999;
+    z-index: 1000;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -973,7 +973,7 @@ html, body {
     .mascot-container {
         bottom: 20px;
         right: 20px;
-        z-index: 500;
+        z-index: 1000;
     }
     
     .hero-stats {
