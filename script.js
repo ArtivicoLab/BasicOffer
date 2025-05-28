@@ -110,7 +110,7 @@ function updateMascotMessages() {
     
     // Check which section is in view
     if (contactSection && scrollTop >= contactSection.offsetTop - 200) {
-        message = "Ready to launch? Email contact@artivocolab.com! 🚀";
+        message = "Ready to launch? Email contact@artivicolab.com! 🚀";
     } else if (pricingSection && scrollTop >= pricingSection.offsetTop - 200) {
         message = "Only $1,500 one-time payment! 💰";
     } else if (solutionSection && scrollTop >= solutionSection.offsetTop - 200) {
@@ -136,7 +136,7 @@ function showMascotSpeech() {
 
 function handleMascotClick() {
     const messages = [
-        "Need help? Email contact@artivocolab.com! 📧",
+        "Need help? Email contact@artivicolab.com! 📧",
         "FREE hosting forever! 🎉",
         "Only $1,500 one-time payment! 💎",
         "Your website is ready to launch! 🚀",
