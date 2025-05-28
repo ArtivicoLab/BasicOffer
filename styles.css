@@ -902,6 +902,175 @@ body {
     }
 }
 
+/* Cost Comparison Table */
+.cost-comparison-table {
+    background: hsl(var(--white));
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    margin: 0 auto;
+}
+
+.cost-comparison-header {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    background: hsl(var(--gray-800));
+    color: hsl(var(--white));
+}
+
+.cost-header-cell {
+    padding: var(--space-4);
+    font-weight: 700;
+    text-align: center;
+    font-size: var(--font-size-base);
+}
+
+.featured-option {
+    background: linear-gradient(135deg, 
+        hsl(var(--hot-pink)), 
+        hsl(var(--primary-yellow)));
+    position: relative;
+}
+
+.featured-option::after {
+    content: '⭐ BEST VALUE';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background: hsl(var(--white));
+    color: hsl(var(--hot-pink));
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+}
+
+.cost-comparison-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    border-bottom: 1px solid hsl(var(--gray-200));
+    transition: all var(--transition-normal);
+}
+
+.cost-comparison-row:hover {
+    background: hsla(var(--primary-yellow) / 0.05);
+}
+
+.cost-comparison-row:last-child {
+    border-bottom: none;
+}
+
+.cost-cell {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3);
+    min-height: 70px;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.feature-cell {
+    text-align: left !important;
+    justify-content: center !important;
+    flex-direction: row !important;
+    background: hsla(var(--gray-50) / 0.5);
+    border-right: 1px solid hsl(var(--gray-200));
+}
+
+.featured-cell {
+    background: hsla(var(--primary-yellow) / 0.1);
+    border-left: 3px solid hsl(var(--primary-yellow));
+    border-right: 3px solid hsl(var(--primary-yellow));
+}
+
+.status-icon {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-1);
+}
+
+.cost-cell span:not(.status-icon):not(.free-text) {
+    font-size: var(--font-size-sm);
+    color: hsl(var(--gray-600));
+    font-weight: 500;
+}
+
+.feature-cell strong {
+    font-weight: 600;
+    color: hsl(var(--gray-800));
+    font-size: var(--font-size-base);
+}
+
+.highlight-cost-row {
+    border: 2px solid hsl(var(--primary-yellow));
+    background: hsla(var(--primary-yellow) / 0.1) !important;
+}
+
+.free-hosting-featured {
+    background: hsla(var(--primary-yellow) / 0.15) !important;
+    position: relative;
+}
+
+.free-hosting-featured::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        hsla(var(--primary-yellow) / 0.1),
+        hsla(var(--lime-green) / 0.05),
+        hsla(var(--turquoise) / 0.05));
+    background-size: 200% 200%;
+    animation: cardShimmer 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.free-hosting-featured .status-icon,
+.free-hosting-featured span {
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 767px) {
+    .cost-comparison-header,
+    .cost-comparison-row {
+        grid-template-columns: 1.2fr 0.8fr 0.8fr 0.8fr;
+    }
+    
+    .cost-header-cell {
+        padding: var(--space-2);
+        font-size: var(--font-size-sm);
+    }
+    
+    .cost-cell {
+        padding: var(--space-2);
+        min-height: 60px;
+        gap: var(--space-1);
+    }
+    
+    .status-icon {
+        font-size: var(--font-size-base);
+    }
+    
+    .cost-cell span:not(.status-icon):not(.free-text) {
+        font-size: var(--font-size-xs);
+    }
+    
+    .feature-cell strong {
+        font-size: var(--font-size-sm);
+    }
+    
+    .featured-option::after {
+        font-size: 10px;
+        padding: 2px 6px;
+    }
+}
+
 /* Pricing Section */
 .pricing {
     padding: var(--space-20) 0;
