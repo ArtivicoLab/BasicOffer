@@ -1515,21 +1515,7 @@ body {
     position: relative;
 }
 
-.featured-option::after {
-    content: '⭐ BEST VALUE';
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: hsl(var(--white));
-    color: hsl(var(--hot-pink));
-    font-size: var(--font-size-xs);
-    font-weight: 700;
-    padding: var(--space-1) var(--space-2);
-    border-radius: var(--radius-full);
-    white-space: nowrap;
-    box-shadow: var(--shadow);
-}
+
 
 .cost-comparison-row {
     display: grid;
