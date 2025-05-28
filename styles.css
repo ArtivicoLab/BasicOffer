@@ -1075,6 +1075,87 @@ body {
     z-index: 2;
 }
 
+.ai-seo-cell {
+    background: hsla(var(--turquoise) / 0.1) !important;
+    border-left: 3px solid hsl(var(--turquoise));
+    border-right: 3px solid hsl(var(--turquoise));
+    position: relative;
+}
+
+.ai-seo-cell::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        hsla(var(--turquoise) / 0.1),
+        hsla(var(--cyan) / 0.05),
+        hsla(var(--lime-green) / 0.05));
+    background-size: 200% 200%;
+    animation: aiGlow 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.ai-seo-cell .cell-content {
+    position: relative;
+    z-index: 2;
+}
+
+.ai-seo-highlight {
+    border: 2px solid hsl(var(--turquoise)) !important;
+    background: linear-gradient(135deg, 
+        hsla(var(--turquoise) / 0.1), 
+        hsla(var(--cyan) / 0.05),
+        hsla(var(--lime-green) / 0.05));
+    position: relative;
+    overflow: hidden;
+}
+
+.ai-seo-highlight::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        hsla(var(--turquoise) / 0.15),
+        hsla(var(--cyan) / 0.1),
+        hsla(var(--lime-green) / 0.1),
+        hsla(var(--electric-yellow) / 0.05));
+    background-size: 300% 300%;
+    animation: aiGlow 5s ease-in-out infinite;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.ai-seo-highlight h3,
+.ai-seo-highlight p {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes aiGlow {
+    0%, 100% {
+        background-position: 0% 50%;
+        opacity: 0.3;
+    }
+    25% {
+        background-position: 100% 50%;
+        opacity: 0.5;
+    }
+    50% {
+        background-position: 100% 100%;
+        opacity: 0.7;
+    }
+    75% {
+        background-position: 0% 100%;
+        opacity: 0.5;
+    }
+}
+
 @media (max-width: 767px) {
     .comparison-table {
         font-size: var(--font-size-sm);
