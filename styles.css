@@ -812,12 +812,23 @@ body {
 
 /* Full width optimization for 320px devices */
 @media (max-width: 320px) {
+    body {
+        padding: 0;
+        margin: 0;
+    }
+    
     .hero,
     .solution,
     .pricing,
     .contact {
-        padding-left: var(--space-2);
-        padding-right: var(--space-2);
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    .hero-content {
+        padding: 0 var(--space-2);
+        margin: 0;
+        max-width: 100%;
     }
     
     .hero-title {
@@ -833,29 +844,34 @@ body {
     
     .section-title {
         font-size: var(--font-size-2xl);
-        padding: 0;
+        padding: 0 var(--space-2);
     }
     
     .cta-button {
         padding: var(--space-3) var(--space-4);
         font-size: 14px;
-        width: 100%;
+        width: calc(100% - var(--space-4));
         max-width: none;
+        margin: 0 var(--space-2);
     }
     
     .comparison-table,
     .cost-comparison-table {
-        margin: 0 calc(-1 * var(--space-2));
-        width: calc(100% + var(--space-4));
+        margin: 0;
+        width: 100%;
         border-radius: 0;
     }
     
-    .nav {
+    .nav-container {
         padding: 0 var(--space-2);
     }
     
     .nav-brand {
         font-size: var(--font-size-lg);
+    }
+    
+    .section-header {
+        padding: 0 var(--space-2);
     }
 }
 
@@ -1056,6 +1072,14 @@ body {
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 var(--space-4);
+}
+
+@media (max-width: 320px) {
+    .hero-content {
+        padding: 0 var(--space-2);
+        max-width: 100%;
+    }
 }
 
 .hero-badge {
