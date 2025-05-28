@@ -215,6 +215,334 @@ body {
     }
 }
 
+/* ArtivicoLab Mascot */
+.mascot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.mascot-character {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    animation: mascotFloat 3s ease-in-out infinite;
+    transition: all var(--transition-normal);
+}
+
+.mascot-character:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.mascot-body {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        hsl(var(--hot-pink)), 
+        hsl(var(--primary-yellow)),
+        hsl(var(--turquoise)));
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 10px 30px hsla(var(--hot-pink) / 0.3);
+    border: 3px solid hsl(var(--white));
+}
+
+.mascot-face {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 60%;
+}
+
+.mascot-eyes {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.eye {
+    width: 12px;
+    height: 12px;
+    background: hsl(var(--white));
+    border-radius: 50%;
+    position: relative;
+    animation: mascotBlink 4s infinite;
+}
+
+.eye::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 8px;
+    height: 8px;
+    background: hsl(var(--gray-800));
+    border-radius: 50%;
+    animation: eyeMovement 6s ease-in-out infinite;
+}
+
+.mascot-mouth {
+    width: 20px;
+    height: 10px;
+    background: hsl(var(--white));
+    border-radius: 0 0 20px 20px;
+    margin: 0 auto;
+    animation: mascotSmile 2s ease-in-out infinite;
+}
+
+.mascot-arms {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+.arm {
+    position: absolute;
+    width: 30px;
+    height: 8px;
+    background: linear-gradient(135deg, 
+        hsl(var(--lime-green)), 
+        hsl(var(--turquoise)));
+    border-radius: 10px;
+    animation: armWave 2s ease-in-out infinite;
+}
+
+.left-arm {
+    left: -15px;
+    top: 20px;
+    transform-origin: right center;
+    animation-delay: 0s;
+}
+
+.right-arm {
+    right: -15px;
+    top: 20px;
+    transform-origin: left center;
+    animation-delay: 1s;
+}
+
+.mascot-speech {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all var(--transition-normal);
+    pointer-events: none;
+}
+
+.mascot-speech.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.speech-bubble {
+    background: hsl(var(--white));
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    max-width: 200px;
+    text-align: center;
+    border: 2px solid hsl(var(--primary-yellow));
+}
+
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid hsl(var(--primary-yellow));
+}
+
+.speech-bubble::before {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid hsl(var(--white));
+}
+
+#speechText {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: hsl(var(--gray-800));
+    line-height: 1.4;
+}
+
+@keyframes mascotFloat {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+}
+
+@keyframes mascotBlink {
+    0%, 90%, 100% {
+        transform: scaleY(1);
+    }
+    95% {
+        transform: scaleY(0.1);
+    }
+}
+
+@keyframes eyeMovement {
+    0%, 20%, 100% {
+        transform: translateX(0);
+    }
+    10% {
+        transform: translateX(-2px);
+    }
+    30% {
+        transform: translateX(2px);
+    }
+}
+
+@keyframes mascotSmile {
+    0%, 100% {
+        transform: scaleX(1);
+    }
+    50% {
+        transform: scaleX(1.2);
+    }
+}
+
+@keyframes armWave {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(20deg);
+    }
+}
+
+@media (max-width: 767px) {
+    .mascot-container {
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .mascot-character {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .speech-bubble {
+        max-width: 150px;
+        padding: var(--space-2) var(--space-3);
+    }
+    
+    #speechText {
+        font-size: var(--font-size-xs);
+    }
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, 
+        hsl(var(--hot-pink)), 
+        hsl(var(--primary-yellow)));
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    color: hsl(var(--white));
+    font-weight: 600;
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.8);
+    transition: all var(--transition-normal);
+    box-shadow: 0 8px 25px hsla(var(--hot-pink) / 0.4);
+    animation: backToTopPulse 3s ease-in-out infinite;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 15px 35px hsla(var(--hot-pink) / 0.6);
+}
+
+.back-to-top:active {
+    transform: translateY(0) scale(0.95);
+}
+
+.back-to-top-icon {
+    animation: arrowBounce 2s ease-in-out infinite;
+}
+
+.back-to-top-text {
+    font-size: 10px;
+    margin-top: -2px;
+}
+
+@keyframes backToTopPulse {
+    0%, 100% {
+        box-shadow: 0 8px 25px hsla(var(--hot-pink) / 0.4);
+    }
+    50% {
+        box-shadow: 0 8px 25px hsla(var(--hot-pink) / 0.6),
+                    0 0 20px hsla(var(--primary-yellow) / 0.4);
+    }
+}
+
+@keyframes arrowBounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-3px);
+    }
+    60% {
+        transform: translateY(-1px);
+    }
+}
+
+@media (max-width: 767px) {
+    .back-to-top {
+        width: 50px;
+        height: 50px;
+        bottom: 90px;
+        left: 15px;
+    }
+    
+    .back-to-top-text {
+        font-size: 8px;
+    }
+}
+
 /* Navigation */
 .nav {
     position: fixed;

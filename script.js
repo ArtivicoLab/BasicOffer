@@ -4,7 +4,10 @@ const nav = document.querySelector('.nav');
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
 const heroCTA = document.getElementById('heroCTA');
-const demoForm = document.getElementById('demoForm');
+const mascot = document.getElementById('mascot');
+const mascotSpeech = document.getElementById('mascotSpeech');
+const speechText = document.getElementById('speechText');
+const backToTop = document.getElementById('backToTop');
 
 // State
 let ticking = false;
@@ -61,10 +64,77 @@ function handleScroll() {
             updateProgressBar();
             updateNavOnScroll();
             handleScrollAnimations();
+            updateBackToTopButton();
+            updateMascotMessages();
             ticking = false;
         });
         ticking = true;
     }
+}
+
+// Back to Top Button
+function updateBackToTopButton() {
+    const scrollTop = window.pageYOffset;
+    if (scrollTop > 300) {
+        backToTop.classList.add('show');
+    } else {
+        backToTop.classList.remove('show');
+    }
+}
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// Mascot Messages based on scroll position
+function updateMascotMessages() {
+    const scrollTop = window.pageYOffset;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
+    
+    let message = "Welcome to ArtivicoLab! 👋";
+    
+    if (scrollPercent > 90) {
+        message = "Ready to launch? Email us! 🚀";
+    } else if (scrollPercent > 70) {
+        message = "See our amazing pricing! 💰";
+    } else if (scrollPercent > 50) {
+        message = "We're better than agencies! ⭐";
+    } else if (scrollPercent > 25) {
+        message = "Check out our solutions! ✨";
+    } else if (scrollPercent > 10) {
+        message = "Scroll to learn more! 📖";
+    }
+    
+    if (speechText.textContent !== message) {
+        speechText.textContent = message;
+        showMascotSpeech();
+    }
+}
+
+function showMascotSpeech() {
+    mascotSpeech.classList.add('show');
+    setTimeout(() => {
+        mascotSpeech.classList.remove('show');
+    }, 3000);
+}
+
+function handleMascotClick() {
+    const messages = [
+        "Need help? Email contact@artivocolab.com! 📧",
+        "FREE hosting forever! 🎉",
+        "Only $1,500 one-time payment! 💎",
+        "Your website is ready to launch! 🚀",
+        "Get your GitHub account ready! 🔗"
+    ];
+    
+    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+    speechText.textContent = randomMessage;
+    showMascotSpeech();
 }
 
 // Mobile Navigation Toggle
@@ -493,6 +563,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Navigation toggle
     navToggle.addEventListener('click', toggleMobileNav);
+    
+    // Back to top button
+    backToTop.addEventListener('click', scrollToTop);
+    
+    // Mascot interactions
+    mascot.addEventListener('click', handleMascotClick);
     
     // Navigation links
     document.querySelectorAll('.nav-link').forEach(link => {
