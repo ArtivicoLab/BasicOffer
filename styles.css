@@ -1156,6 +1156,96 @@ body {
     }
 }
 
+/* Savings Text Animation */
+.savings-text {
+    display: inline-block;
+    background: linear-gradient(45deg, 
+        hsl(var(--lime-green)),
+        hsl(var(--primary-yellow)),
+        hsl(var(--turquoise)),
+        hsl(var(--electric-yellow)),
+        hsl(var(--lime-green)));
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: savingsGlow 3s ease-in-out infinite;
+    font-weight: 900;
+    font-size: 1.1em;
+}
+
+.savings-highlight-row {
+    border: 3px solid hsl(var(--lime-green));
+    background: hsla(var(--lime-green) / 0.15) !important;
+}
+
+.savings-featured {
+    background: hsla(var(--lime-green) / 0.2) !important;
+    border-left: 4px solid hsl(var(--lime-green));
+    border-right: 4px solid hsl(var(--lime-green));
+    position: relative;
+}
+
+.savings-featured::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        hsla(var(--lime-green) / 0.15),
+        hsla(var(--primary-yellow) / 0.1),
+        hsla(var(--turquoise) / 0.1));
+    background-size: 200% 200%;
+    animation: savingsShimmer 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.savings-featured .status-icon,
+.savings-featured span {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes savingsGlow {
+    0%, 100% {
+        background-position: 0% 50%;
+        transform: scale(1);
+    }
+    25% {
+        background-position: 100% 50%;
+        transform: scale(1.05);
+    }
+    50% {
+        background-position: 100% 100%;
+        transform: scale(1.1);
+    }
+    75% {
+        background-position: 0% 100%;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes savingsShimmer {
+    0%, 100% {
+        background-position: 0% 50%;
+        opacity: 0.4;
+    }
+    25% {
+        background-position: 100% 50%;
+        opacity: 0.6;
+    }
+    50% {
+        background-position: 100% 100%;
+        opacity: 0.8;
+    }
+    75% {
+        background-position: 0% 100%;
+        opacity: 0.6;
+    }
+}
+
 @media (max-width: 767px) {
     .comparison-table {
         font-size: var(--font-size-sm);
