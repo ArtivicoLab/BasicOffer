@@ -14,6 +14,8 @@ const contrastToggle = document.getElementById('contrastToggle');
 const fontSizeToggle = document.getElementById('fontSizeToggle');
 const animationsToggle = document.getElementById('animationsToggle');
 const focusToggle = document.getElementById('focusToggle');
+const welcomePopup = document.getElementById('welcomePopup');
+const welcomeClose = document.getElementById('welcomeClose');
 
 // State
 let ticking = false;
@@ -679,6 +681,18 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Load accessibility settings
     loadAccessibilitySettings();
+    
+    // Welcome popup
+    welcomeClose.addEventListener('click', () => {
+        welcomePopup.classList.add('hidden');
+    });
+    
+    // Close popup when clicking outside content
+    welcomePopup.addEventListener('click', (event) => {
+        if (event.target === welcomePopup) {
+            welcomePopup.classList.add('hidden');
+        }
+    });
     
     // Close accessibility menu when clicking outside
     document.addEventListener('click', (event) => {
