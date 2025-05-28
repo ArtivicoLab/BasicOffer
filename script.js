@@ -106,7 +106,7 @@ function updateMascotMessages() {
     const pricingSection = document.getElementById('pricing');
     const contactSection = document.getElementById('contact');
     
-    let message = "Meet Gradi, your web developer! 👋";
+    let message = "Welcome to your offer page! 🎉";
     
     // Check which section is in view
     if (contactSection && scrollTop >= contactSection.offsetTop - 200) {
@@ -116,9 +116,9 @@ function updateMascotMessages() {
     } else if (solutionSection && scrollTop >= solutionSection.offsetTop - 200) {
         message = "We solve all your web problems! ⭐";
     } else if (aboutSection && scrollTop >= aboutSection.offsetTop - 200) {
-        message = "6+ years of web development expertise! ✨";
-    } else if (heroSection && scrollTop < aboutSection.offsetTop - 200) {
         message = "Meet Gradi, your web developer! 👋";
+    } else if (heroSection && scrollTop < aboutSection.offsetTop - 200) {
+        message = "Welcome to your offer page! 🎉";
     }
     
     if (speechText.textContent !== message) {
