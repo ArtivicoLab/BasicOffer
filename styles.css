@@ -690,12 +690,14 @@ body {
 
 .high-contrast .free-text,
 .high-contrast .savings-text {
-    background: hsl(var(--black)) !important;
+    background: transparent !important;
+    background-image: none !important;
     -webkit-background-clip: unset !important;
     background-clip: unset !important;
-    -webkit-text-fill-color: hsl(var(--black)) !important;
+    -webkit-text-fill-color: unset !important;
     color: hsl(var(--black)) !important;
     font-weight: 900 !important;
+    transform: none !important;
 }
 
 .high-contrast .progress-bar {
