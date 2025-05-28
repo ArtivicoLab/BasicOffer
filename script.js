@@ -476,6 +476,17 @@ function initPerformanceOptimizations() {
     }, 250));
 }
 
+// Rocket Animation Function
+function animateRockets() {
+    // Find all elements that contain rocket emoji
+    const allElements = document.querySelectorAll('*');
+    allElements.forEach(element => {
+        if (element.textContent && element.textContent.includes('🚀')) {
+            element.classList.add('rocket-animated');
+        }
+    });
+}
+
 // Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize all features
@@ -490,6 +501,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Start stats animation
     setTimeout(animateStats, 1000);
+    
+    // Animate rockets
+    setTimeout(animateRockets, 1500);
     
     // Navigation toggle
     navToggle.addEventListener('click', toggleMobileNav);
