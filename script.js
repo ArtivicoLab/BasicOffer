@@ -102,7 +102,7 @@ function updateMascotMessages() {
     const documentHeight = document.documentElement.scrollHeight;
     const scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
     
-    let message = "Welcome to ArtivicoLab! 👋";
+    let message = "Meet Gradi, your web developer! 👋";
     
     if (scrollPercent > 90) {
         message = "Ready to launch? Email us! 🚀";
@@ -111,9 +111,9 @@ function updateMascotMessages() {
     } else if (scrollPercent > 50) {
         message = "We're better than agencies! ⭐";
     } else if (scrollPercent > 25) {
-        message = "Check out our solutions! ✨";
+        message = "6+ years of expertise! ✨";
     } else if (scrollPercent > 10) {
-        message = "Scroll to learn more! 📖";
+        message = "Meet Gradi, your developer! 📖";
     }
     
     if (speechText.textContent !== message) {

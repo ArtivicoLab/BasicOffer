@@ -1403,7 +1403,7 @@ html, body {
 
 /* About Section */
 .about {
-    padding: var(--space-20) 0;
+    padding: var(--space-12) 0;
     background: linear-gradient(135deg, 
         hsla(var(--gray-800) / 0.95), 
         hsla(var(--gray-900) / 0.98));
@@ -1431,7 +1431,7 @@ html, body {
     z-index: 2;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-16);
+    gap: var(--space-8);
     align-items: center;
 }
 
@@ -1442,17 +1442,17 @@ html, body {
 }
 
 .section-subtitle {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-lg);
     color: hsla(var(--white) / 0.8);
-    margin-bottom: var(--space-12);
+    margin-bottom: var(--space-6);
     font-weight: 500;
 }
 
 .expertise-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-6);
-    margin-bottom: var(--space-12);
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
 }
 
 .expertise-card {
@@ -1460,7 +1460,7 @@ html, body {
     backdrop-filter: blur(10px);
     border: 1px solid hsla(var(--white) / 0.2);
     border-radius: var(--radius-xl);
-    padding: var(--space-6);
+    padding: var(--space-4);
     transition: all var(--transition-normal);
     cursor: pointer;
 }
@@ -1492,8 +1492,8 @@ html, body {
 
 .credentials {
     display: grid;
-    gap: var(--space-4);
-    margin-bottom: var(--space-8);
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
 }
 
 .credential-item {
