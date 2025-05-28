@@ -969,6 +969,26 @@ html, body {
         font-size: var(--font-size-base);
         margin-right: var(--space-2);
     }
+    
+    .mascot-container {
+        bottom: 20px;
+        right: 20px;
+        z-index: 500;
+    }
+    
+    .hero-stats {
+        margin-top: var(--space-8);
+        margin-bottom: var(--space-8);
+        z-index: 100;
+        position: relative;
+    }
+    
+    .stat {
+        background: hsla(var(--white) / 0.9);
+        padding: var(--space-2);
+        border-radius: var(--radius-lg);
+        margin-bottom: var(--space-2);
+    }
 }
 
 /* Navigation */
