@@ -1535,6 +1535,32 @@ html, body {
     box-shadow: 0 10px 30px hsla(var(--turquoise) / 0.4);
 }
 
+.cta-buttons {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cta-button.linkedin {
+    background: linear-gradient(135deg, #0077B5, #005885);
+    color: hsl(var(--white));
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-4) var(--space-6);
+    border-radius: var(--radius-xl);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all var(--transition-normal);
+}
+
+.cta-button.linkedin:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 119, 181, 0.4);
+    background: linear-gradient(135deg, #005885, #004266);
+}
+
 .profile-section {
     display: flex;
     flex-direction: column;
@@ -1745,6 +1771,21 @@ html, body {
     
     .years {
         font-size: var(--font-size-base);
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-3);
+    }
+    
+    .cta-button.secondary,
+    .cta-button.linkedin {
+        width: 100%;
+        max-width: 200px;
+        justify-content: center;
+        padding: var(--space-3) var(--space-4);
+        font-size: var(--font-size-sm);
     }
 }
 
