@@ -902,59 +902,6 @@ body {
     }
 }
 
-/* Rocket Animation */
-@keyframes rocketLaunch {
-    0%, 100% {
-        transform: translateY(0) rotate(0deg) scale(1);
-    }
-    25% {
-        transform: translateY(-8px) rotate(-5deg) scale(1.1);
-    }
-    50% {
-        transform: translateY(-15px) rotate(5deg) scale(1.2);
-    }
-    75% {
-        transform: translateY(-8px) rotate(-3deg) scale(1.1);
-    }
-}
-
-@keyframes rocketGlow {
-    0%, 100% {
-        text-shadow: 0 0 10px hsla(var(--primary-yellow) / 0.6),
-                     0 0 20px hsla(var(--hot-pink) / 0.4),
-                     0 0 30px hsla(var(--turquoise) / 0.3);
-        filter: hue-rotate(0deg) brightness(1);
-    }
-    33% {
-        text-shadow: 0 0 15px hsla(var(--turquoise) / 0.8),
-                     0 0 25px hsla(var(--lime-green) / 0.6),
-                     0 0 35px hsla(var(--primary-yellow) / 0.4);
-        filter: hue-rotate(120deg) brightness(1.3);
-    }
-    66% {
-        text-shadow: 0 0 20px hsla(var(--hot-pink) / 0.9),
-                     0 0 30px hsla(var(--magenta) / 0.7),
-                     0 0 40px hsla(var(--electric-yellow) / 0.5);
-        filter: hue-rotate(240deg) brightness(1.1);
-    }
-}
-
-/* Apply rocket animations to all rocket icons */
-.card-icon,
-.cell-icon,
-.status-icon,
-.usp-icon {
-    display: inline-block;
-}
-
-/* Rocket specific styling - target any element containing rocket emoji */
-.rocket-animated,
-.rocket-icon {
-    animation: rocketLaunch 3s ease-in-out infinite, rocketGlow 2s ease-in-out infinite !important;
-    display: inline-block !important;
-    transform-origin: center bottom;
-}
-
 /* Cost Comparison Table */
 .cost-comparison-table {
     background: hsl(var(--white));
