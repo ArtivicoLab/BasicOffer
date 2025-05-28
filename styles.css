@@ -758,7 +758,8 @@ body {
 @media (max-width: 767px) {
     .accessibility-controls {
         bottom: 90px;
-        left: 15px;
+        right: 15px;
+        left: auto;
     }
     
     .accessibility-toggle {
@@ -769,6 +770,9 @@ body {
     .accessibility-menu {
         min-width: 200px;
         padding: var(--space-3);
+        right: 0;
+        left: auto;
+        transform: translateX(0);
     }
 }
 
