@@ -122,13 +122,97 @@ body {
     top: 0;
     left: 0;
     width: 0%;
-    height: 4px;
+    height: 6px;
     background: linear-gradient(90deg, 
         hsl(var(--hot-pink)), 
         hsl(var(--primary-yellow)), 
-        hsl(var(--turquoise)));
+        hsl(var(--turquoise)),
+        hsl(var(--lime-green)),
+        hsl(var(--magenta)),
+        hsl(var(--electric-yellow)));
+    background-size: 300% 300%;
     z-index: 1000;
     transition: width var(--transition-fast);
+    animation: progressGlow 3s ease-in-out infinite;
+    box-shadow: 0 0 20px hsla(var(--primary-yellow) / 0.6),
+                0 0 40px hsla(var(--hot-pink) / 0.4),
+                0 0 60px hsla(var(--turquoise) / 0.3);
+}
+
+.progress-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        transparent 0%,
+        hsla(var(--white) / 0.3) 50%,
+        transparent 100%);
+    animation: progressShine 2s ease-in-out infinite;
+}
+
+.progress-bar::after {
+    content: 'ArtivicoLab';
+    position: fixed;
+    top: 8px;
+    right: 20px;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    color: hsl(var(--hot-pink));
+    background: linear-gradient(135deg, 
+        hsl(var(--hot-pink)), 
+        hsl(var(--primary-yellow)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: brandPulse 2s ease-in-out infinite;
+    text-shadow: 0 0 10px hsla(var(--primary-yellow) / 0.5);
+}
+
+@keyframes progressGlow {
+    0%, 100% {
+        background-position: 0% 50%;
+        filter: brightness(1) saturate(1);
+    }
+    25% {
+        background-position: 100% 50%;
+        filter: brightness(1.2) saturate(1.3);
+    }
+    50% {
+        background-position: 100% 100%;
+        filter: brightness(1.4) saturate(1.5);
+    }
+    75% {
+        background-position: 0% 100%;
+        filter: brightness(1.2) saturate(1.3);
+    }
+}
+
+@keyframes progressShine {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes brandPulse {
+    0%, 100% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
 }
 
 /* Navigation */
