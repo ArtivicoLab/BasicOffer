@@ -8,6 +8,12 @@ const mascot = document.getElementById('mascot');
 const mascotSpeech = document.getElementById('mascotSpeech');
 const speechText = document.getElementById('speechText');
 const backToTop = document.getElementById('backToTop');
+const accessibilityToggle = document.getElementById('accessibilityToggle');
+const accessibilityMenu = document.getElementById('accessibilityMenu');
+const contrastToggle = document.getElementById('contrastToggle');
+const fontSizeToggle = document.getElementById('fontSizeToggle');
+const animationsToggle = document.getElementById('animationsToggle');
+const focusToggle = document.getElementById('focusToggle');
 
 // State
 let ticking = false;
@@ -135,6 +141,100 @@ function handleMascotClick() {
     const randomMessage = messages[Math.floor(Math.random() * messages.length)];
     speechText.textContent = randomMessage;
     showMascotSpeech();
+}
+
+// Accessibility Functions
+function toggleAccessibilityMenu() {
+    const isExpanded = accessibilityToggle.getAttribute('aria-expanded') === 'true';
+    
+    if (isExpanded) {
+        accessibilityMenu.classList.remove('show');
+        accessibilityMenu.setAttribute('aria-hidden', 'true');
+        accessibilityToggle.setAttribute('aria-expanded', 'false');
+    } else {
+        accessibilityMenu.classList.add('show');
+        accessibilityMenu.setAttribute('aria-hidden', 'false');
+        accessibilityToggle.setAttribute('aria-expanded', 'true');
+    }
+}
+
+function toggleHighContrast() {
+    const isActive = document.body.classList.contains('high-contrast');
+    
+    if (isActive) {
+        document.body.classList.remove('high-contrast');
+        contrastToggle.setAttribute('aria-pressed', 'false');
+        localStorage.setItem('high-contrast', 'false');
+    } else {
+        document.body.classList.add('high-contrast');
+        contrastToggle.setAttribute('aria-pressed', 'true');
+        localStorage.setItem('high-contrast', 'true');
+    }
+}
+
+function toggleLargeText() {
+    const isActive = document.body.classList.contains('large-text');
+    
+    if (isActive) {
+        document.body.classList.remove('large-text');
+        fontSizeToggle.setAttribute('aria-pressed', 'false');
+        localStorage.setItem('large-text', 'false');
+    } else {
+        document.body.classList.add('large-text');
+        fontSizeToggle.setAttribute('aria-pressed', 'true');
+        localStorage.setItem('large-text', 'true');
+    }
+}
+
+function toggleReducedMotion() {
+    const isActive = document.body.classList.contains('reduced-motion');
+    
+    if (isActive) {
+        document.body.classList.remove('reduced-motion');
+        animationsToggle.setAttribute('aria-pressed', 'false');
+        localStorage.setItem('reduced-motion', 'false');
+    } else {
+        document.body.classList.add('reduced-motion');
+        animationsToggle.setAttribute('aria-pressed', 'true');
+        localStorage.setItem('reduced-motion', 'true');
+    }
+}
+
+function toggleEnhancedFocus() {
+    const isActive = document.body.classList.contains('enhanced-focus');
+    
+    if (isActive) {
+        document.body.classList.remove('enhanced-focus');
+        focusToggle.setAttribute('aria-pressed', 'false');
+        localStorage.setItem('enhanced-focus', 'false');
+    } else {
+        document.body.classList.add('enhanced-focus');
+        focusToggle.setAttribute('aria-pressed', 'true');
+        localStorage.setItem('enhanced-focus', 'true');
+    }
+}
+
+function loadAccessibilitySettings() {
+    // Load saved accessibility preferences
+    if (localStorage.getItem('high-contrast') === 'true') {
+        document.body.classList.add('high-contrast');
+        contrastToggle.setAttribute('aria-pressed', 'true');
+    }
+    
+    if (localStorage.getItem('large-text') === 'true') {
+        document.body.classList.add('large-text');
+        fontSizeToggle.setAttribute('aria-pressed', 'true');
+    }
+    
+    if (localStorage.getItem('reduced-motion') === 'true') {
+        document.body.classList.add('reduced-motion');
+        animationsToggle.setAttribute('aria-pressed', 'true');
+    }
+    
+    if (localStorage.getItem('enhanced-focus') === 'true') {
+        document.body.classList.add('enhanced-focus');
+        focusToggle.setAttribute('aria-pressed', 'true');
+    }
 }
 
 // Mobile Navigation Toggle
@@ -569,6 +669,25 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Mascot interactions
     mascot.addEventListener('click', handleMascotClick);
+    
+    // Accessibility controls
+    accessibilityToggle.addEventListener('click', toggleAccessibilityMenu);
+    contrastToggle.addEventListener('click', toggleHighContrast);
+    fontSizeToggle.addEventListener('click', toggleLargeText);
+    animationsToggle.addEventListener('click', toggleReducedMotion);
+    focusToggle.addEventListener('click', toggleEnhancedFocus);
+    
+    // Load accessibility settings
+    loadAccessibilitySettings();
+    
+    // Close accessibility menu when clicking outside
+    document.addEventListener('click', (event) => {
+        if (!event.target.closest('.accessibility-controls')) {
+            accessibilityMenu.classList.remove('show');
+            accessibilityMenu.setAttribute('aria-hidden', 'true');
+            accessibilityToggle.setAttribute('aria-expanded', 'false');
+        }
+    });
     
     // Navigation links
     document.querySelectorAll('.nav-link').forEach(link => {

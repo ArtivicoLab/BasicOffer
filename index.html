@@ -39,14 +39,65 @@
     </div>
 
     <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop" title="Back to Top">
+    <button class="back-to-top" id="backToTop" title="Back to Top" aria-label="Scroll back to top of page">
         <div class="back-to-top-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M12 4L4 12H8V20H16V12H20L12 4Z" fill="currentColor"/>
             </svg>
         </div>
         <span class="back-to-top-text">Top</span>
     </button>
+
+    <!-- Accessibility Controls -->
+    <div class="accessibility-controls" id="accessibilityControls" role="toolbar" aria-label="Accessibility options">
+        <button class="accessibility-toggle" id="accessibilityToggle" 
+                aria-label="Toggle accessibility menu" 
+                aria-expanded="false"
+                aria-controls="accessibilityMenu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 7.5V9M15 22.5L12 19.5L9 22.5V18H15V22.5ZM6 7.5L0 7V9L6 9V7.5Z" fill="currentColor"/>
+            </svg>
+        </button>
+        <div class="accessibility-menu" id="accessibilityMenu" aria-hidden="true">
+            <h3>Accessibility Options</h3>
+            <div class="accessibility-option">
+                <button class="option-button" id="contrastToggle" 
+                        aria-pressed="false"
+                        aria-describedby="contrastDesc">
+                    <span class="option-icon">🌓</span>
+                    <span class="option-text">High Contrast</span>
+                </button>
+                <div id="contrastDesc" class="sr-only">Toggle high contrast mode for better visibility</div>
+            </div>
+            <div class="accessibility-option">
+                <button class="option-button" id="fontSizeToggle" 
+                        aria-pressed="false"
+                        aria-describedby="fontDesc">
+                    <span class="option-icon">🔍</span>
+                    <span class="option-text">Large Text</span>
+                </button>
+                <div id="fontDesc" class="sr-only">Increase text size for better readability</div>
+            </div>
+            <div class="accessibility-option">
+                <button class="option-button" id="animationsToggle" 
+                        aria-pressed="false"
+                        aria-describedby="animDesc">
+                    <span class="option-icon">⏸️</span>
+                    <span class="option-text">Reduce Motion</span>
+                </button>
+                <div id="animDesc" class="sr-only">Reduce animations and motion effects</div>
+            </div>
+            <div class="accessibility-option">
+                <button class="option-button" id="focusToggle" 
+                        aria-pressed="false"
+                        aria-describedby="focusDesc">
+                    <span class="option-icon">🎯</span>
+                    <span class="option-text">Focus Indicators</span>
+                </button>
+                <div id="focusDesc" class="sr-only">Enhanced keyboard focus visibility</div>
+            </div>
+        </div>
+    </div>
 
     <!-- Navigation -->
     <nav class="nav">
