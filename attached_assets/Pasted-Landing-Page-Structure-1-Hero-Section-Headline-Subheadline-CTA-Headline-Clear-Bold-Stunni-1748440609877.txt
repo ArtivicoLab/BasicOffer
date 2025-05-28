@@ -1,0 +1,63 @@
+Landing Page Structure
+
+1. Hero Section (Headline, Subheadline, CTA)
+Headline (Clear, Bold):
+“Stunning, Fast, Conversion-Optimized Websites – Just $1,500”
+
+Subheadline:
+One-time payment. No surprise fees. Get a modern, mobile-optimized landing page that turns visitors into customers – delivered fast.
+
+CTA Button:
+👉 Get Your Free Demo Site Today
+
+2. Problem/Solution Section
+Common Business Website Problems:
+
+Outdated or unresponsive design
+Slow loading speeds (killing SEO & conversions)
+Agencies charge $5K+ and take months
+DIY builders (Wix/Squarespace) look cheap and convert poorly
+Your Solution:
+
+✅ Professional-Grade, Hand-Coded Landing Pages
+✅ Lightning Fast (100 Google PageSpeed Score)
+✅ Mobile-First, SEO-Friendly Design
+✅ One-Time Payment – Only $1,500
+✅ $100 Monthly Pro-Rated Support – Cancel Anytime
+3. Unbeatable Selling Proposition (USP)
+Why We're Better Than Expensive Agencies or DIY Builders
+💸 Pay Once – Own Forever
+No confusing retainers or expensive hourly rates. Just $1,500 for a complete, professional website.
+⚡ Lightning Fast Performance
+Static sites load 10x faster than WordPress or drag-and-drop builders. That means higher SEO rankings and lower bounce rates.
+🎯 Designed to Convert
+We build with one goal: get you more leads, bookings, or calls. Every layout is tailored to your audience.
+🤝 Zero Risk
+You pay a small $100 retainer to lock in your spot. We’ll show you a complete demo site before asking for the full payment.
+🔧 Affordable Ongoing Support
+Need edits, changes, or updates? Just $100/month (pro-rated). Pause or cancel anytime.
+4. Price Comparison Table
+Feature	Your Offer ($1,500)	Traditional Agency ($5,000+)	DIY Website Builders
+Mobile-Optimized	✅	✅	⚠️ (Varies)
+SEO-Friendly & Fast Loading	✅ (Static, fast)	✅ (but often slow)	⚠️ (Bloated code)
+Custom Design	✅	✅	❌ Templates Only
+Ownership	✅ One-time payment	❌ Often subscription-based	❌ Platform-dependent
+Time to Launch	⚡ 7–10 Days	🐢 4–6 Weeks+	⏱ Depends on user
+Ongoing Support	✅ $100/month	❌ $100/hr+	❌ Self-service only
+Risk-Free Preview	✅ Demo Before Buying	❌ Pay Before You See	✅ (but low quality)
+5. Social Proof / Trust Builders
+If you have testimonials, add 1–3 quotes here with headshots.
+
+Or add:
+
+“Built with the same tech trusted by companies like Netflix, GitHub, and Shopify.”
+(Referring to static site generators like Next.js, Hugo, etc.)
+6. CTA – Lock in Your Demo
+Let Us Build Your Business a Free Demo Homepage
+Pay just $100 to lock your spot. If you don’t like the finished site, walk away. No pressure.
+Your business deserves a modern, fast website – without agency pricing.
+[Book My Demo Website →]
+
+⚡ Bonus USP Statement to Use Anywhere:
+
+“We help small businesses win online with ultra-fast, professionally designed websites at a fraction of agency costs. One flat fee. No fluff. No hassle.”
