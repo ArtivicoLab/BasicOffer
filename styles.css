@@ -776,6 +776,41 @@ body {
     }
 }
 
+@media (max-width: 360px) {
+    .accessibility-controls {
+        bottom: 80px;
+        right: 10px;
+    }
+    
+    .accessibility-toggle {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .accessibility-menu {
+        min-width: calc(100vw - 20px);
+        max-width: calc(100vw - 20px);
+        right: -10px;
+        padding: var(--space-2);
+        font-size: 14px;
+    }
+    
+    .accessibility-menu h3 {
+        font-size: var(--font-size-base);
+        margin-bottom: var(--space-2);
+    }
+    
+    .option-button {
+        padding: var(--space-2);
+        font-size: 14px;
+        gap: var(--space-2);
+    }
+    
+    .option-icon {
+        font-size: 16px;
+    }
+}
+
 /* Navigation */
 .nav {
     position: fixed;
