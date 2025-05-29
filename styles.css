@@ -1044,6 +1044,16 @@ html, body {
     transition: color var(--transition-normal);
 }
 
+.nav-link.external-link {
+    background: linear-gradient(135deg, 
+        hsl(var(--hot-pink)), 
+        hsl(var(--primary-yellow)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+}
+
 .nav-link:hover {
     color: hsl(var(--hot-pink));
 }
