@@ -697,6 +697,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Navigation links
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', (event) => {
+            // Skip external links
+            if (link.classList.contains('external-link')) {
+                return; // Let the browser handle the external link normally
+            }
+            
             event.preventDefault();
             const targetId = link.getAttribute('href').substring(1);
             smoothScrollTo(targetId);
