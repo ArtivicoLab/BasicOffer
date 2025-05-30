@@ -1459,6 +1459,112 @@ html, body {
     object-fit: cover;
     border: 3px solid hsl(var(--primary-yellow));
     box-shadow: 0 8px 25px hsla(var(--hot-pink) / 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.developer-intro {
+    position: relative;
+}
+
+.stars-orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.star {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: linear-gradient(135deg, 
+        hsl(var(--primary-yellow)), 
+        hsl(var(--hot-pink)));
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: orbitStars 8s linear infinite;
+}
+
+.star:nth-child(1) {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 0s;
+}
+
+.star:nth-child(2) {
+    top: 25%;
+    right: 0;
+    animation-delay: -2s;
+}
+
+.star:nth-child(3) {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: -4s;
+}
+
+.star:nth-child(4) {
+    top: 25%;
+    left: 0;
+    animation-delay: -6s;
+}
+
+.star:nth-child(5) {
+    top: 10%;
+    right: 20%;
+    animation-delay: -1s;
+    width: 12px;
+    height: 12px;
+}
+
+.star:nth-child(6) {
+    bottom: 10%;
+    right: 20%;
+    animation-delay: -3s;
+    width: 12px;
+    height: 12px;
+}
+
+.star:nth-child(7) {
+    bottom: 10%;
+    left: 20%;
+    animation-delay: -5s;
+    width: 12px;
+    height: 12px;
+}
+
+.star:nth-child(8) {
+    top: 10%;
+    left: 20%;
+    animation-delay: -7s;
+    width: 12px;
+    height: 12px;
+}
+
+@keyframes orbitStars {
+    0% {
+        transform: rotate(0deg) translateX(100px) rotate(0deg);
+        opacity: 0.6;
+    }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(360deg) translateX(100px) rotate(-360deg);
+        opacity: 0.6;
+    }
 }
 
 .developer-info {
