@@ -1391,7 +1391,6 @@ html, body {
 }
 
 .original-price {
-    position: relative;
     text-decoration: line-through;
     text-decoration-color: hsl(var(--gray-700));
     text-decoration-thickness: 3px;
