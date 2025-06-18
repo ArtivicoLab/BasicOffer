@@ -1390,6 +1390,56 @@ html, body {
     -webkit-text-fill-color: transparent;
 }
 
+.original-price {
+    position: relative;
+    text-decoration: line-through;
+    color: hsla(var(--white) / 0.5);
+    font-size: 0.7em;
+    margin-right: var(--space-2);
+}
+
+.discounted-price {
+    color: hsl(var(--lime-green));
+    font-weight: 900;
+    text-shadow: 0 0 20px hsla(var(--lime-green) / 0.5);
+}
+
+.savings-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, 
+        hsl(var(--lime-green)), 
+        hsl(var(--turquoise)));
+    color: hsl(var(--white));
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-xl);
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: var(--space-2) 0 var(--space-4);
+    box-shadow: var(--shadow-md);
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: var(--shadow-md);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 25px hsla(var(--lime-green) / 0.6);
+        transform: scale(1.02);
+    }
+}
+
+.savings-text {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
 .hero-subtitle {
     font-size: var(--font-size-lg);
     color: hsl(var(--gray-600));
