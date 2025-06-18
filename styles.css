@@ -1393,9 +1393,10 @@ html, body {
 .original-price {
     position: relative;
     text-decoration: line-through;
-    color: hsla(var(--white) / 0.5);
-    font-size: 0.7em;
-    margin-right: var(--space-2);
+    color: hsla(var(--gray-600) / 0.8);
+    font-size: 0.8em;
+    margin-right: var(--space-3);
+    font-weight: 600;
 }
 
 .discounted-price {
