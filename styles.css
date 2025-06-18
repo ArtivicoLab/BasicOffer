@@ -1391,7 +1391,7 @@ html, body {
 }
 
 .original-price {
-    position: relative;
+    position: inherit;
     text-decoration: line-through;
     color: hsla(var(--gray-600) / 0.8);
     font-size: 0.8em;
@@ -1410,8 +1410,8 @@ html, body {
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, 
-        hsl(var(--lime-green)), 
-        hsl(var(--turquoise)));
+        hsl(var(--hot-pink)), 
+        hsl(var(--primary-yellow)));
     color: hsl(var(--white));
     padding: var(--space-2) var(--space-4);
     border-radius: var(--radius-xl);
@@ -1420,18 +1420,20 @@ html, body {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     margin: var(--space-2) 0 var(--space-4);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-lg);
     animation: pulse-glow 2s ease-in-out infinite;
+    border: 2px solid hsl(var(--white));
 }
 
 @keyframes pulse-glow {
     0%, 100% {
-        box-shadow: var(--shadow-md);
+        box-shadow: var(--shadow-lg);
         transform: scale(1);
     }
     50% {
-        box-shadow: 0 0 25px hsla(var(--lime-green) / 0.6);
-        transform: scale(1.02);
+        box-shadow: 0 0 20px hsla(var(--hot-pink) / 0.4), 
+                    0 0 40px hsla(var(--primary-yellow) / 0.3);
+        transform: scale(1.05);
     }
 }
 
