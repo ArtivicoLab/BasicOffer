@@ -87,7 +87,10 @@ This project is a professional landing page for a web development service offeri
 
 ```
 Changelog:
-- June 18, 2025. Initial setup
+- June 18, 2025: Initial setup
+- June 18, 2025: Added discount pricing structure ($5,000 → $1,500, 70% savings)
+- June 18, 2025: Implemented Share on LinkedIn functionality with pre-written post template
+- June 18, 2025: Enhanced SEO with Open Graph tags, Twitter Cards, structured data, and meta optimization
 ```
 
 ## User Preferences
