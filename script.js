@@ -148,6 +148,40 @@ function handleMascotClick() {
     showMascotSpeech();
 }
 
+function handleLinkedInShare() {
+    const currentUrl = window.location.href;
+    const postText = encodeURIComponent(`🚀 Professional Web Development Services - $1,500 One-Time Payment
+
+Are you tired of slow, outdated websites that don't convert? I'm Gradi Kayamba, a web developer with 6+ years of experience and 3 years in cybersecurity, specializing in creating lightning-fast, conversion-optimized websites.
+
+✅ What you get:
+• Mobile-first, professional design
+• 100 PageSpeed score optimization  
+• AI SEO ready for next-generation search
+• FREE hosting included
+• 2-7 day delivery
+• One month of free updates
+
+💡 Why choose me:
+• Expert in modern web technologies, crypto, and AI
+• Self-taught developer with enterprise-level security knowledge
+• No hidden fees or monthly subscriptions
+• Future-proof websites built to last
+
+💰 Investment: Just $1,500 - no agencies, no markup, direct collaboration.
+
+Ready to transform your online presence? Check out my portfolio and current offer at: ${currentUrl}
+
+Looking for ongoing support? I also offer monthly maintenance packages at $100/month (cancel anytime).
+
+#WebDevelopment #LandingPages #WebDesign #DigitalMarketing #SmallBusiness #Entrepreneurship`);
+
+    const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl)}&text=${postText}`;
+    
+    // Open LinkedIn share dialog in a new window
+    window.open(linkedInUrl, '_blank', 'width=600,height=400,scrollbars=yes,resizable=yes');
+}
+
 // Accessibility Functions
 function toggleAccessibilityMenu() {
     const isExpanded = accessibilityToggle.getAttribute('aria-expanded') === 'true';
@@ -674,6 +708,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Mascot interactions
     mascot.addEventListener('click', handleMascotClick);
+    
+    // Share on LinkedIn functionality
+    const shareLinkedInBtn = document.getElementById('shareLinkedIn');
+    if (shareLinkedInBtn) {
+        shareLinkedInBtn.addEventListener('click', handleLinkedInShare);
+    }
     
     // Accessibility controls
     accessibilityToggle.addEventListener('click', toggleAccessibilityMenu);

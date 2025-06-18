@@ -1797,6 +1797,23 @@ html, body {
     box-shadow: 0 8px 20px rgba(0, 119, 181, 0.4);
 }
 
+.action-btn.share-linkedin {
+    background: linear-gradient(135deg, 
+        hsl(var(--turquoise)), 
+        hsl(var(--lime-green)));
+    color: hsl(var(--white));
+    border: none;
+    cursor: pointer;
+}
+
+.action-btn.share-linkedin:hover {
+    background: linear-gradient(135deg, 
+        hsl(var(--lime-green)), 
+        hsl(var(--hot-pink)));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px hsla(var(--turquoise) / 0.4);
+}
+
 .expertise-highlights {
     position: relative;
     z-index: 2;
