@@ -1391,9 +1391,11 @@ html, body {
 }
 
 .original-price {
-    position: inherit;
+    position: relative;
     text-decoration: line-through;
-    color: hsla(var(--gray-600) / 0.8);
+    text-decoration-color: hsl(var(--gray-700));
+    text-decoration-thickness: 3px;
+    color: hsl(var(--gray-700));
     font-size: 0.8em;
     margin-right: var(--space-3);
     font-weight: 600;
@@ -1410,8 +1412,9 @@ html, body {
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, 
-        hsl(var(--hot-pink)), 
-        hsl(var(--primary-yellow)));
+        #8A8A8A, 
+        #B8B8B8, 
+        #9E9E9E);
     color: hsl(var(--white));
     padding: var(--space-2) var(--space-4);
     border-radius: var(--radius-xl);
@@ -1422,7 +1425,7 @@ html, body {
     margin: var(--space-2) 0 var(--space-4);
     box-shadow: var(--shadow-lg);
     animation: pulse-glow 2s ease-in-out infinite;
-    border: 2px solid hsl(var(--white));
+    border: 1px solid #6D6D6D;
 }
 
 @keyframes pulse-glow {
@@ -1431,9 +1434,9 @@ html, body {
         transform: scale(1);
     }
     50% {
-        box-shadow: 0 0 20px hsla(var(--hot-pink) / 0.4), 
-                    0 0 40px hsla(var(--primary-yellow) / 0.3);
-        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(184, 184, 184, 0.4), 
+                    0 0 40px rgba(158, 158, 158, 0.3);
+        transform: scale(1.03);
     }
 }
 
